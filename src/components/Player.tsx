@@ -1,17 +1,17 @@
 import { useRef, useState } from "react";
 
 const Player = () => {
-  const playerName = useRef<HTMLInputElement>(null);
+  const playerName = useRef<HTMLInputElement | null>(null);
   const [enteredPlayerName, setEnteredPlayerName] = useState<string | null>(
     null
   );
 
-  const handleClick = () => {
+  function handleClick() {
     if (playerName.current) {
       setEnteredPlayerName(playerName.current.value);
       playerName.current.value = "";
     }
-  };
+  }
 
   return (
     <section id="player">
